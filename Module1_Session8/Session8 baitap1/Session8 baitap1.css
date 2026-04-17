@@ -1,0 +1,21 @@
+.flex-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.flex-item {
+  width: calc(50% - 20px);
+  background-color: lightblue;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.large {
+  width: calc(100% - 20px);
+}
+
+@media screen and (max-width: 1024px) {
+  .flex-item {
+    width: calc(100% - 20px);
+  }
+}
