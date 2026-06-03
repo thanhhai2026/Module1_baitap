@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* KHUNG BAO CHỨA CHÍNH */
+.wrapper {
+    display: flex;
+    /* Xếp nằm ngang, nếu màn hình nhỏ tự động xuống hàng */
+    flex-wrap: wrap; 
+    
+    /* MẤU CHỐT: Tạo khoảng cách 80px cố định giữa các khối */
+    gap: 80px; 
+    
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Khối Fade in */
+.fade-box {
+    background-color: #a6a6af;
+    color: #ffffff;
+    font-size: 54px;
+    font-weight: bold;
+    width: 400px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.4s ease; 
+}
+.fade-box:hover {
+    background-color: #6c6c75; 
+}
+
+/* Khối Grow */
+.grow-box {
+    background-color: #5d5964;
+    color: #ffffff;
+    font-size: 54px;
+    font-weight: bold;
+    width: 400px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+.grow-box:hover {
+    /* Khi phóng to 1.15 lần, nhờ có 'gap: 80px' ở trên 
+       nên nó sẽ không bị đè hay lấn sang khối Fade-box */
+    transform: scale(1.15); 
+}

@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+  color: black;
+  background-color: #cecece;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+a:active {
+  background-color: red;
+  color: white;
+}

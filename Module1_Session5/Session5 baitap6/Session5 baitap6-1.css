@@ -1,0 +1,103 @@
+\/* Thiết lập cơ bản căn giữa banner trên màn hình */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Khối banner chính chứa ảnh nền lấy trực tiếp từ internet */
+.thinking-banner {
+    position: relative;
+    width: 420px; 
+    height: 680px; 
+    
+    /* ĐÃ CẬP NHẬT: Sử dụng link ảnh online của Rikkeisoft */
+    background-image: url('https://kenh14cdn.com/2017/vdacsdcd-1510710568576.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px; 
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Lớp phủ mờ tối dần về phía đáy (Gradient Overlay) */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.85) 90%);
+    z-index: 1;
+}
+
+/* Khối nội dung văn bản */
+.banner-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 30px; 
+    box-sizing: border-box;
+    z-index: 2; 
+    text-align: left;
+}
+
+/* Tiêu đề chính */
+.banner-title {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+}
+
+/* Đoạn mô tả ngắn */
+.banner-desc {
+    color: #e0e0e0; 
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 30px 0;
+    font-weight: 400;
+}
+
+/* Định dạng nút "Explore" */
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none; 
+    font-size: 20px;
+    font-weight: 600;
+    gap: 10px;
+    transition: opacity 0.2s ease;
+}
+
+/* Vòng tròn chứa icon mũi tên */
+.arrow-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ffffff; 
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.explore-btn:hover {
+    opacity: 0.85; 
+}
+
+.explore-btn:hover .arrow-icon {
+    transform: translateX(5px); 
+}
