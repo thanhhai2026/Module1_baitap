@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tạo Form Sở Thích</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #ffffff;
+        }
+
+        .instruction {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        /* Khung viền bao ngoài của toàn bộ form */
+        .form-container {
+            border: 1px solid #7f9db9;
+            width: 100%;
+            max-width: 550px;
+            background-color: #f4fbfb; /* Màu nền xanh nhạt nhẹ giống hình */
+            padding-bottom: 15px;
+        }
+
+        /* Thanh tiêu đề màu cam */
+        .form-header {
+            background-color: #ff4500; /* Màu nền cam */
+            color: #ffffff;            /* Chữ màu trắng */
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 0;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Cấu trúc dòng nhập liệu */
+        .form-row {
+            display: flex;
+            margin-bottom: 12px;
+            padding: 0 20px;
+        }
+
+        /* Nhãn chữ bên trái (Họ và tên, Email, Sở thích) */
+        .form-label {
+            width: 100px;
+            color: #1e5494; /* Màu chữ xanh dương */
+            font-size: 15px;
+            padding-top: 3px;
+        }
+
+        /* Ô nhập văn bản */
+        .input-text {
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #7f9db9;
+            padding: 3px;
+            font-size: 14px;
+        }
+
+        /* Lưới chứa các ô chọn sở thích (chia làm 3 cột) */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 8px;
+            column-gap: 5px;
+            width: 100%;
+        }
+
+        /* Định dạng từng ô lựa chọn sở thích */
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #ff6633; /* Màu chữ cam nhạt cho các sở thích */
+        }
+
+        .checkbox-item input {
+            margin-right: 6px;
+        }
+
+        /* Khu vực chứa 2 nút bấm ở dưới cùng */
+        .button-group {
+            padding-left: 120px;
+            margin-top: 15px;
+        }
+
+        .button-group input[type="submit"],
+        .button-group input[type="reset"] {
+            background-color: #e1e1e1;
+            border: 1px solid #707070;
+            padding: 3px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+
+        .button-group input[type="submit"]:hover,
+        .button-group input[type="reset"]:hover {
+            background-color: #d0d0d0;
+        }
+
+        .note {
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-header">SỞ THÍCH CỦA BẠN</div>
+
+        <form action="#" method="POST">
+            <div class="form-row">
+                <div class="form-label">Họ và tên</div>
+                <input type="text" class="input-text" name="fullname">
+            </div>
+
+            <div class="form-row">
+                <div class="form-label">Email</div>
+                <input type="text" class="input-text" name="email">
+            </div>
+
+            <div class="form-row">
+                <div class="form-label">Sở thích</div>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item"><input type="checkbox" name="hobbies" value="thethao">Thể thao</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobbies" value="amnhac">Âm nhạc</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobbies" value="docsach">Đọc sách</label>
+                    
+                    <label class="checkbox-item"><input type="checkbox" name="hobbies" value="luotweb">Lướt web</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobbies" value="choigame">Chơi game</label>
+                    <label class="checkbox-item"><input type="checkbox" name="hobbies" value="dienanh">Điện ảnh</label>
+                    
+                    <label class="checkbox-item"><input type="checkbox" name="hobbies" value="dulich">Du lịch</label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

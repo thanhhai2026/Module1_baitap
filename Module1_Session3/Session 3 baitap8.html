@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tạo Form Liên Hệ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .instruction {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: #333333;
+        }
+
+        /* Tiêu đề lớn có chân (Times New Roman) */
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 38px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* Khung bao biểu mẫu */
+        .contact-form {
+            max-width: 700px;
+        }
+
+        /* Khối chứa từng ô nhập liệu */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Tiêu đề nhãn nằm phía trên ô nhập */
+        .form-group label {
+            display: block;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* Ô nhập Họ và tên, Email */
+        .input-field {
+            width: 100%;
+            max-width: 350px;
+            padding: 6px;
+            font-size: 16px;
+            border: 1px solid #767676;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Khung viết tin nhắn lớn */
+        .textarea-field {
+            width: 100%;
+            height: 150px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #767676;
+            border-radius: 4px;
+            resize: both; /* Cho phép co giãn tùy ý bằng góc kéo phía dưới */
+            box-sizing: border-box;
+        }
+
+        /* Nút gửi dữ liệu */
+        .submit-btn {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 22px;
+            padding: 4px 18px;
+            background-color: #efefef;
+            border: 1px solid #767676;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-form">
+        <h1>Liên Hệ Với Chúng Tôi</h1>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" class="input-field" name="fullname">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="input-field" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Tin nhắn:</label>
+                <textarea id="message" class="textarea-field" name="message"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Gửi</button>
+        </form>
+    </div>
+
+</body>
+</html>

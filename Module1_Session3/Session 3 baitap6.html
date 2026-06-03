@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng danh sách sản phẩm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* Định dạng khung viền bao ngoài của toàn bộ bảng */
+        .product-table {
+            border: 1px solid #000000;
+            border-collapse: separate; /* Giữ các ô tách rời thành từng khối riêng biệt */
+            border-spacing: 15px;      /* Khoảng cách rãnh rỗng giữa các khối hộp */
+            width: 100%;
+            max-width: 750px;
+        }
+
+        /* Định dạng viền, khoảng đệm nội dung và canh giữa cho tất cả các ô */
+        .product-table th, .product-table td {
+            border: 1px solid #000000;
+            padding: 20px 10px;
+            text-align: center;
+            background-color: #ffffff;
+            vertical-align: middle; /* Căn giữa chữ theo chiều dọc */
+        }
+
+        /* Định dạng font chữ có chân hệ tiếng Việt cho hàng tiêu đề chính */
+        .product-table th {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Định dạng font chữ có chân hệ tiếng Việt cho các ô dữ liệu bên dưới */
+        .product-table td {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th style="width: 35%;">Loại sản phẩm</th>
+                <th style="width: 35%;">Tên sản phẩm</th>
+                <th style="width: 30%;">Giá</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Điện tử</td>
+                <td>Laptop</td>
+                <td>15.000.000</td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td>8.000.000</td>
+            </tr>
+            <tr>
+                <td>Gia dụng</td>
+                <td>Máy giặt</td>
+                <td>5.000.000</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

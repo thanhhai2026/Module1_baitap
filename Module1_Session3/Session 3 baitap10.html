@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatPhotoApp</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 10px;
+            line-height: 1.4;
+            color: #000;
+        }
+        h1, h2, h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        h1 { font-size: 24px; }
+        h2 { font-size: 20px; }
+        h3 { font-size: 16px; }
+        
+        a { color: #0000ee; text-decoration: underline; }
+        
+        /* Định dạng hình ảnh chính */
+        .main-cat-img {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .section-img {
+            width: 300px;
+            height: auto;
+            display: block;
+        }
+        figure {
+            margin: 0 0 20px 0;
+        }
+        figcaption {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Định dạng bảng giống mèo */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+        th, td {
+            border: 1px solid #767676;
+            padding: 6px;
+            text-align: left;
+            font-size: 13px;
+            vertical-align: top;
+        }
+        th {
+            font-weight: bold;
+            background-color: #ffffff;
+        }
+        .table-cat-img {
+            width: 60px;
+            height: auto;
+            display: block;
+        }
+
+        /* Định dạng biểu mẫu khảo sát */
+        fieldset {
+            border: 1px solid #767676;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+        legend {
+            font-size: 14px;
+            padding: 0 5px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 14px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            padding: 3px;
+            width: 250px;
+            font-size: 13px;
+        }
+        input[type="submit"] {
+            padding: 3px 10px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        footer {
+            font-size: 13px;
+            margin-top: 25px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CatPhotoApp</h1>
+
+    <section>
+        <h2>Cat Photos</h2>
+        <p>Everyone loves <a href="#">cute cats</a> online!</p>
+        <p>See more <a href="#">cat photos</a> in our gallery.</p>
+        <img class="main-cat-img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400" alt="A cute orange cat looking up">
+    </section>
+
+    <section>
+        <h2>Cat Lists</h2>
+        <h3>Things cats love:</h3>
+        <ul>
+            <li>cat nip</li>
+            <li>laser pointers</li>
+            <li>lasagna</li>
+        </ul>
+        
+        <figure>
+            <img class="section-img" src="https://www.simplyrecipes.com/thmb/20XQzu_U40qlhSEZgcVE6I_Ft2o=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Best-Homemade-Lasagna-LEAD-4-7cb54b4d2b264bb3a2b4fbdb85e90d22.jpg">
+            <figcaption>Cats <em>love</em> lasagna.</figcaption>
+        </figure>
+
+        <h3>Top 3 things cats hate:</h3>
+        <ol>
+            <li>flea treatment</li>
+            <li>thunder</li>
+            <li>other cats</li>
+        </ol>
+
+        <figure>
+            <img class="section-img" src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3NodXR0ZXJzdG9jay0yMjc4Nzc2MTg3LWhlcm8uanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9LCJ0b0Zvcm1hdCI6ImF2aWYifX0=" alt="Three cute small kittens sitting together on the grass">
+            <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Cat Breed</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Breed</th>
+                    <th>Location of origin</th>
+                    <th>Type</th>
+                    <th>Body type</th>
+                    <th>Coat type and length</th>
+                    <th>Coat pattern</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#">Abyssinian</a><sup>[3]</sup></td>
+                    <td>Unspecified, but somewhere in Afro-Asia, likely <a href="#">Ethiopia</a><sup>[4]</sup></td>
+                    <td>Natural</td>
+                    <td>Semi-foreign</td>
+                    <td>Short</td>
+                    <td>Ticked tabby</td>
+                    <td><img class="table-cat-img" src="https://cdn.pixabay.com/photo/2015/11/16/22/14/cat-1046544_640.jpg" alt="Abyssinian"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Aegean</a></td>
+                    <td>Greece</td>
+                    <td>Natural</td>
+                    <td>Moderate</td>
+                    <td>Semi-long</td>
+                    <td>Multi-color</td>
+                    <td><img class="table-cat-img" src="https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_640.jpg" alt="Aegean"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">American Bobtail</a><sup>[10]</sup></td>
+                    <td>United States<sup>[11]</sup></td>
+                    <td>Mutation of shortened tail</td>
+                    <td>Cobby</td>
+                    <td>Semi-long</td>
+                    <td>All</td>
+                    <td><img class="table-cat-img" src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_640.jpg" alt="American Bobtail"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">American Curl</a><sup>[12]</sup></td>
+                    <td>United States<sup>[11]</sup></td>
+                    <td>Mutation</td>
+                    <td>Semi-foreign</td>
+                    <td>Semi-long</td>
+                    <td>All</td>
+                    <td><img class="table-cat-img" src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404_640.jpg" alt="American Curl"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">American Ringtail</a></td>
+                    <td>United States<sup>[11]</sup></td>
+                    <td>Mutation</td>
+                    <td>Foreign</td>
+                    <td>Semi-long</td>
+                    <td>All</td>
+                    <td><img class="table-cat-img" src="https://cdn.pixabay.com/photo/2017/07/25/01/22/cat-2536662_640.jpg" alt="American Ringtail"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Cat Form</h2>
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Is your cat an indoor or outdoor cat?</legend>
+                <label><input type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+                <label><input type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>What's your cat's personality?</legend>
+                <label><input type="checkbox" name="personality" value="loving" checked> Loving</label>
+                <label><input type="checkbox" name="personality" value="lazy"> Lazy</label>
+                <label><input type="checkbox" name="personality" value="energetic"> Energetic</label>
+            </fieldset>
+
+            <div class="form-group">
+                <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>No Copyright - <a href="https://nikkei.edu.vn" target="_blank">nikkei.edu.vn</a></p>
+    </footer>
+
+</body>
+</html>

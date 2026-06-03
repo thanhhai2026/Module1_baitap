@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách ảnh của bạn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #ffffff;
+        }
+
+        /* Tiêu đề chính h1 */
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        /* Cấu trúc bảng chứa ảnh không viền, các ô khít nhau */
+        .image-grid {
+            border-collapse: collapse;
+            border: none;
+        }
+
+        .image-grid td {
+            padding: 4px; /* Tạo khoảng cách rãnh trắng nhỏ giữa các bức ảnh */
+            border: none;
+        }
+
+        /* Định dạng cho các bức ảnh đại diện */
+        .avatar-img {
+            width: 300px;  /* Bạn có thể tùy chỉnh kích thước lớn nhỏ ở đây */
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Danh sách ảnh của bạn</h1>
+
+    <table class="image-grid">
+        <tr>
+            <td>
+                <img class="avatar-img" src="https://www.svgrepo.com/show/384677/account-avatar-profile-user-12.svg" alt="Ảnh cá nhân 1">
+            </td>
+            <td>
+                <img class="avatar-img" src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="Ảnh cá nhân 2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="avatar-img" src="https://www.svgrepo.com/show/384678/account-avatar-profile-user-9.svg" alt="Ảnh cá nhân 3">
+            </td>
+            <td>
+                <img class="avatar-img" src="https://www.svgrepo.com/show/384670/account-avatar-profile-user.svg" alt="Ảnh cá nhân 4">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
