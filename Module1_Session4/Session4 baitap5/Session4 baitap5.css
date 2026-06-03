@@ -1,0 +1,74 @@
+/* Thiết lập định dạng chung cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Tiêu đề chính "What is CSS?" màu vàng cam nổi bật */
+h1 {
+    color: #ffaa00;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Đoạn văn giới thiệu (Màu xanh dương) */
+.intro-text {
+    color: #0000ff;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* In đậm cụm từ Cascading Style Sheets (CSS) */
+.highlight-blue {
+    font-weight: bold;
+}
+
+/* Đoạn văn mô tả chi tiết (Màu đỏ) */
+.description-text {
+    color: #ff3333;
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Khung hộp thông báo "Tip" */
+.tip-box {
+    background-color: #fffde6;     /* Nền vàng nhạt */
+    border-left: 5px solid #ffaa00; /* Thanh dọc màu cam bên trái */
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+/* Chữ "Tip:" in đậm màu cam */
+.tip-box strong {
+    color: #ffaa00;
+    font-size: 17px;
+}
+
+/* Tô màu cam cho từ "cascading" trong hộp thoại */
+.highlight-orange {
+    color: #ffaa00;
+    font-weight: bold;
+}
+
+/* Danh sách các phần bài tập phía dưới */
+.exercise-section h2 {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    font-size: 22px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Định dạng riêng để chữ "Phần 1, 2, 3" đậm hơn phần chữ sau */
+.exercise-section h2 strong {
+    font-weight: bold;
+}

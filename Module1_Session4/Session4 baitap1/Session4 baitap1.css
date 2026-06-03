@@ -1,0 +1,65 @@
+/* Thiết lập cơ bản cho toàn bộ trang */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Nền trắng tinh khiết */
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Khối bao bọc toàn bộ nội dung để căn giữa biểu đồ tổng thể */
+.container {
+    width: 100%;
+    max-width: 800px; /* Độ rộng tối đa để nội dung không bị quá tràn */
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center; /* Căn giữa toàn bộ chữ và ảnh bên trong */
+    box-sizing: border-box;
+}
+
+/* Biểu ngữ tiêu đề màu đen chữ trắng */
+.header-title {
+    background-color: #333333; /* Màu nền xám đen/đen */
+    color: #ffffff; /* Màu chữ trắng */
+    font-size: 28px;
+    font-weight: bold;
+    padding: 15px 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    display: inline-block; /* Giúp khối bao vừa vặn hoặc kéo rộng tùy ý */
+    width: 100%; /* Trải dài bằng chiều rộng vùng chứa */
+    box-sizing: border-box;
+}
+
+/* Đoạn văn giới thiệu */
+.intro-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* Khối căn chỉnh khung ảnh */
+.image-wrapper {
+    margin-bottom: 20px;
+}
+
+/* Định dạng hình ảnh hiển thị ở giữa */
+.main-image {
+    width: 220px; /* Chiều rộng ảnh vừa phải giống như trong mẫu */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Đảm bảo ảnh luôn nằm chính giữa */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Tạo bóng đổ nhẹ cho ảnh chân thật */
+}
+
+/* Dòng chữ chân trang dưới bức ảnh */
+.footer-text {
+    font-size: 16px;
+    color: #000000;
+    margin-top: 15px;
+}

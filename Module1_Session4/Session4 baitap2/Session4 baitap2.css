@@ -1,0 +1,22 @@
+/* reset css mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* css trang web */
+h1 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px; /* khoảng cách giữa đường viên và nội dung  */
+}
+p {
+  background-color: rgb(161, 161, 161);
+  text-align: center; /* căn các nội dung bên trong vào giữa */
+}
+a {
+  text-decoration: none; /* loại bỏ gạch chân dưới thẻ a */
+  color: #313131;
+  margin-right: 10px; /* Khoảng cách các phần tử */
+}

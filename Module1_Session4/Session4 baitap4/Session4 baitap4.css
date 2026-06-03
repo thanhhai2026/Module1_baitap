@@ -1,0 +1,43 @@
+/* Thiết lập font chữ và căn giữa hộp nội dung trên màn hình */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    margin: 0;
+}
+
+/* Khung viền bao quanh văn bản theo đúng hình mẫu */
+.content-box {
+    border: 1px solid #333333; /* Viền đen mỏng */
+    max-width: 800px;          /* Chiều rộng tối đa của hộp */
+    padding: 15px 20px;        /* Khoảng cách giữa chữ và viền */
+    box-sizing: border-box;
+}
+
+/* Định dạng các đoạn văn */
+.content-box p {
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.6;          /* Khoảng cách giữa các dòng thoáng, dễ đọc */
+    margin-top: 0;
+    margin-bottom: 20px;       /* Khoảng cách giữa đoạn văn trên và đoạn dưới */
+}
+
+/* Loại bỏ khoảng cách thừa ở đoạn văn cuối cùng */
+.content-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Định dạng các từ cần chuyển sang màu xanh dương */
+.blue-text {
+    color: #4a77db;            /* Màu xanh dương nhạt chuẩn theo ảnh mẫu */
+    cursor: pointer;
+}
+
+/* Hiệu ứng gạch chân nhẹ khi di chuột vào chữ màu xanh (tùy chọn giúp giống liên kết hơn) */
+.blue-text:hover {
+    text-decoration: underline;
+}

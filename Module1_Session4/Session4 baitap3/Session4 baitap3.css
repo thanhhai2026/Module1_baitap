@@ -1,0 +1,81 @@
+/* Khởi tạo cơ bản để căn giữa form trên màn hình */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif; /* Font chữ có chân giống trong ảnh mẫu */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+/* Khối bao quanh toàn bộ form */
+.contact-form-container {
+    width: 100%;
+    max-width: 650px; /* Độ rộng của form */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Định dạng tiêu đề chính */
+.form-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Khoảng cách giữa các cụm nhập liệu */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Định dạng nhãn chữ (Họ và tên, Email, Tin nhắn) */
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+/* Định dạng chung cho ô input và textarea */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #cccccc; /* Viền xám mỏng */
+    border-radius: 4px; /* Bo góc nhẹ */
+    box-sizing: border-box;
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Cho phép thay đổi kích thước chiều cao của ô Tin nhắn (tự chọn) */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Định dạng nút "Gửi" màu xanh lá cây */
+.submit-btn {
+    width: 100%;
+    background-color: #00c853; /* Màu xanh lá cây sáng chuẩn mẫu */
+    color: #ffffff; /* Chữ trắng */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Hiệu ứng khi di chuột qua nút Gửi */
+.submit-btn:hover {
+    background-color: #00a944; /* Xanh đậm hơn một chút khi di chuột */
+}
