@@ -1,0 +1,160 @@
+/* --- Reset cài đặt mặc định --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* --- Header Section (Xanh lá) --- */
+.blog-header {
+    background-color: #4caf50; /* Màu xanh lá cây chủ đạo */
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.blog-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.header-nav a {
+    color: #0000ff; /* Link điều hướng màu xanh dương theo mẫu */
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 0.9rem;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- Bố cục Container chia 2 cột --- */
+.blog-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex; /* Dùng Flexbox để chia cột bên trái và phải */
+    gap: 30px;
+}
+
+/* --- Cột trái: Sidebar Chuyên mục --- */
+.sidebar {
+    width: 25%;
+    border: 1px solid #e0e0e0; /* Viền xám bao quanh nhẹ */
+    padding: 20px;
+    min-height: 400px;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.category-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.category-list li {
+    margin-bottom: 8px;
+}
+
+.category-list a {
+    color: #0000ff;
+    text-decoration: none;
+}
+
+.category-list a:hover {
+    text-decoration: underline;
+}
+
+/* --- Cột phải: Khối Nội dung Chính --- */
+.main-content {
+    width: 75%;
+}
+
+.blog-post {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0; /* Đường kẻ ngang phân cách các bài viết */
+}
+
+/* Xóa đường kẻ ở bài viết cuối cùng */
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-post h2 {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.post-summary {
+    font-size: 0.95rem;
+    color: #333333;
+    margin-top: 15px;
+}
+
+/* --- CSS Vẽ giả lập các hình ảnh minh họa bài viết --- */
+.post-image {
+    width: 240px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+/* Ảnh bài viết 1: Nền vàng */
+.placeholder-yellow {
+    background-color: #f1c40f;
+    border: 1px solid #dddddd;
+}
+
+.placeholder-yellow .js-logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Ảnh bài viết 2: Nền tối/đen */
+.placeholder-dark {
+    background-color: #1a1a1a;
+}
+
+.placeholder-dark .js-logo-circle {
+    background-color: #f1c40f;
+    color: #1a1a1a;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+/* --- Chân trang Footer (Xám đen) --- */
+.blog-footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+.blog-footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.blog-footer a:hover {
+    text-decoration: underline;
+}

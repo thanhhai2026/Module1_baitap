@@ -1,0 +1,131 @@
+/* --- Reset CSS Cơ Bản --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- 1. Thanh điều hướng Navbar (Màu xanh lá) --- */
+.navbar {
+    background-color: #4caf50; /* Màu xanh lá chủ đạo theo mẫu */
+    color: #ffffff;
+    padding: 15px 0;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Đẩy logo sang trái, menu sang phải */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-left: 15px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- 2. Phần Banner Chính (Hero Section nền xám rất nhạt) --- */
+.hero-section {
+    background-color: #f5f5f5; /* Màu nền xám nhạt */
+    padding: 100px 20px;
+    text-align: center;
+    flex: 1; /* Tự động co giãn lấp đầy khoảng trống */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.05rem;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+/* Nút bấm Get Started màu xanh lá bo góc nhẹ */
+.btn-get-started {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-get-started:hover {
+    background-color: #439e47;
+}
+
+/* --- 3. Khối tính năng (Features Section) --- */
+.features-section {
+    background-color: #ffffff;
+    padding: 25px 0;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Chia đều khoảng cách giữa 3 cột */
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+}
+
+/* Các thẻ tính năng màu xám, bo góc, căn giữa chữ */
+.feature-card {
+    flex: 1; /* Cả 3 thẻ chia sẻ đều độ rộng hàng ngang */
+    background-color: #dbdbdb; /* Màu xám đặc trưng của khối mẫu */
+    color: #555555;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+/* --- 4. Chân trang Footer (Xám đen) --- */
+.footer {
+    background-color: #2c2c2c; /* Màu nền tối */
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.85rem;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
