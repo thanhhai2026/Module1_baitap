@@ -1,0 +1,739 @@
+/* --- BASE SYSTEM & RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --teal-main: #00C2C2;       /* Xanh ngọc chủ đạo của Eduu. */
+    --teal-dark: #008B8B;
+    --navy-text: #181E2C;       /* Chữ đen navy đậm */
+    --muted-gray: #6B7280;
+    --white: #FFFFFF;
+    --bg-light: #F9FAFB;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--navy-text);
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Clear float system */
+.navbar::after, .hero-wrapper::after, .feature-row::after, .courses-header-row::after, .course-row::after, .test-wrapper::after, .footer-grid::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- LOGO & NAVIGATION --- */
+.header {
+    background-color: var(--white);
+    padding: 25px 0;
+}
+
+.logo {
+    float: left;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy-text);
+    line-height: 40px;
+}
+
+.logo span {
+    color: var(--teal-main);
+}
+
+.logo-dot {
+    color: var(--teal-main);
+    margin-right: 4px;
+}
+
+.nav-links {
+    float: left;
+    margin-left: 80px;
+    line-height: 40px;
+}
+
+.nav-links a {
+    margin: 0 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--muted-gray);
+    text-decoration: none;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--teal-main);
+}
+
+.nav-actions {
+    float: right;
+    margin-top: 2px;
+}
+
+.btn-text {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy-text);
+    text-decoration: none;
+    margin-right: 20px;
+    line-height: 36px;
+}
+
+.btn-teal-light {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: #E6F9F9;
+    color: var(--teal-main);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    padding: 60px 0 80px 0;
+}
+
+.hero-left {
+    float: left;
+    width: 50%;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.hero-right {
+    float: left;
+    width: 50%;
+}
+
+.badge-promo {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #FFF3EA;
+    color: #FF7A1A;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--navy-text);
+    margin-bottom: 20px;
+}
+
+.text-teal {
+    color: var(--teal-main);
+}
+
+.hero-desc {
+    font-size: 16px;
+    color: var(--muted-gray);
+    margin-bottom: 35px;
+    max-width: 480px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-teal {
+    background-color: var(--teal-main);
+    color: var(--white);
+}
+
+/* Hero Right Side Graphics */
+.hero-image-box {
+    position: relative;
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 30px;
+    background-color: #E2F5F5;
+}
+
+.floating-student-card {
+    position: absolute;
+    bottom: 30px;
+    left: -30px;
+    background-color: var(--white);
+    padding: 12px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    font-size: 13px;
+}
+
+.avatar-group {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.avatar-group img {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    margin-right: -10px;
+    display: inline-block;
+}
+
+.floating-student-card p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* --- PREMIUM FEATURES SECTION --- */
+.features-section {
+    padding: 80px 0;
+    background-color: #FAFBFD;
+}
+
+.section-center-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.section-tag {
+    color: var(--teal-main);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-center-title h2 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.section-subdesc {
+    color: var(--muted-gray);
+    font-size: 15px;
+}
+
+.feature-row {
+    margin: 0 -15px;
+}
+
+.feature-col {
+    float: left;
+    width: 33.33%;
+    padding: 0 15px;
+}
+
+.f-card {
+    background-color: var(--white);
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+}
+
+.f-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.bg-light-orange { background-color: #FFF2E8; color: #FF7A1A; }
+.bg-light-red { background-color: #FFEAEA; color: #FF4D4D; }
+.bg-light-purple { background-color: #F3EFFF; color: #7C4DFF; }
+
+.f-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.f-card p {
+    font-size: 14px;
+    color: var(--muted-gray);
+}
+
+/* --- POPULAR COURSES SECTION --- */
+.courses-section {
+    padding: 80px 0;
+}
+
+.courses-header-row {
+    margin-bottom: 40px;
+}
+
+.ch-left { float: left; }
+.ch-right { float: right; margin-top: 40px; }
+
+.link-teal {
+    font-weight: 700;
+    color: var(--teal-main);
+    text-decoration: none;
+}
+
+.course-row {
+    margin: 0 -15px 50px -15px;
+}
+
+.course-col {
+    float: left;
+    width: 33.33%;
+    padding: 0 15px;
+}
+
+.c-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+}
+
+.c-img-box {
+    height: 220px;
+    background-color: #EEE;
+}
+
+.c-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.c-info { padding: 25px; }
+
+.c-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+
+.c-meta-price { font-size: 14px; color: var(--muted-gray); margin-bottom: 15px; }
+
+.price-bold { font-size: 20px; font-weight: 800; color: var(--navy-text); }
+
+.c-ratings { font-size: 14px; font-weight: 600; }
+.text-orange { color: #FF9F1C; }
+.c-ratings span { color: var(--muted-gray); font-weight: 400; }
+
+/* Stat inline element box */
+.stats-counter-wrapper {
+    padding: 30px 0;
+    border-top: 1px solid #ECEEEF;
+}
+
+.stat-count-item h2 { font-size: 42px; font-weight: 800; color: var(--navy-text); float: left; margin-right: 20px; }
+.stat-count-item p { font-size: 14px; color: var(--muted-gray); line-height: 55px; }
+
+/* --- TESTIMONIAL MAP-STYLE SECTION --- */
+.testimonial-section {
+    padding: 80px 0;
+    background-color: #FAFBFD;
+}
+
+.test-wrapper {
+    position: relative;
+}
+
+.test-quote-box {
+    float: left;
+    width: 45%;
+    padding-right: 40px;
+}
+
+.quote-icon {
+    font-size: 70px;
+    color: var(--teal-main);
+    line-height: 1;
+}
+
+.quote-main-text {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.quote-author {
+    color: var(--muted-gray);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.dots-navigation .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background-color: #DDD;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.dots-navigation .dot.active { background-color: var(--teal-main); }
+
+/* Avatar layout cloud map simulation */
+.avatar-cloud-container {
+    float: right;
+    width: 55%;
+    height: 300px;
+    position: relative;
+}
+
+.avatar-center {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid var(--white);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.avatar-float {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid var(--white);
+}
+
+.pos-1 { top: 20px; left: 40px; }
+.pos-2 { top: 40px; right: 60px; }
+.pos-3 { bottom: 30px; left: 80px; }
+.pos-4 { bottom: 50px; right: 100px; }
+
+/* --- CALL TO ACTION BAR --- */
+.cta-section {
+    padding: 60px 0;
+}
+
+.cta-box {
+    background-color: #E6F9F9;
+    border-radius: 24px;
+    padding: 40px 50px;
+}
+
+.cta-box h2 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+.cta-box p { color: #555; font-size: 15px; }
+
+.btn-dark-teal {
+    background-color: var(--navy-text);
+    color: var(--white);
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: var(--navy-text);
+    color: #9CA3AF;
+    padding: 70px 0;
+}
+
+.footer-col-about {
+    float: left;
+    width: 40%;
+    padding-right: 60px;
+}
+
+.text-white { color: var(--white) !important; margin-bottom: 20px; }
+
+.footer-col-about p { font-size: 14px; line-height: 1.6; }
+
+.footer-col-links {
+    float: left;
+    width: 20%;
+}
+
+.footer-col-links h4 {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-col-links a {
+    display: block;
+    color: #9CA3AF;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.footer-col-links a:hover { color: var(--white); }
+
+/* --- GRID MOBILE RESPONSIVE --- */
+@media (max-width: 991px) {
+    .hero-left, .hero-right, .feature-col, .course-col, .test-quote-box, .avatar-cloud-container, .footer-col-about, .footer-col-links {
+        width: 100% !important;
+        float: none !important;
+        padding: 0 !important;
+        margin-bottom: 40px;
+    }
+    .hero-left, .section-center-title, .courses-header-row { text-align: center; }
+    .hero-desc { margin: 0 auto 35px auto; }
+    .ch-right { float: none; margin-top: 15px; }
+}
+
+/* --- TRẠNG THÁI TESTIMONIAL BOX & AVATAR CLOUD --- */
+.testimonial-section {
+    padding: 100px 0;
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.test-quote-box {
+    float: left;
+    width: 45%;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+.quote-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    color: var(--teal-main);
+    line-height: 1;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.quote-main-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy-text);
+    line-height: 1.45;
+    margin-bottom: 20px;
+}
+
+.quote-author {
+    color: var(--muted-gray);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+/* Nút chuyển slide tròn */
+.dots-navigation .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #E5E7EB;
+    border-radius: 50%;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dots-navigation .dot.active, .dots-navigation .dot:hover {
+    background-color: var(--teal-main);
+}
+
+/* Vùng chứa Avatar bay nghệ thuật (Figma Simulation) */
+.avatar-cloud-container {
+    float: right;
+    width: 55%;
+    height: 380px;
+    position: relative;
+}
+
+.avatar-wrapper {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--white);
+    box-shadow: 0 10px 25px rgba(0, 194, 194, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Định vị tọa độ tuyệt đối chính xác cho các avatar theo hình tròn */
+.center-av {
+    width: 120px; height: 120px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--white);
+    box-shadow: 0 15px 35px rgba(0, 194, 194, 0.2);
+    z-index: 5;
+}
+
+.pos-1 { width: 65px; height: 65px; top: 15%; left: 15%; }
+.pos-2 { width: 55px; height: 55px; top: 10%; right: 20%; }
+.pos-3 { width: 70px; height: 70px; bottom: 10%; left: 25%; }
+.pos-4 { width: 60px; height: 60px; bottom: 20%; right: 15%; }
+.pos-5 { width: 50px; height: 50px; top: 45%; left: 5%; }
+
+.avatar-wrapper:hover {
+    transform: scale(1.08);
+}
+
+/* --- BANNER CTA (READY TO GET ADMIT) --- */
+.cta-section {
+    padding: 40px 0 80px 0;
+    background-color: var(--white);
+}
+
+.cta-box {
+    background-color: #E6F9F9; /* Màu nền xanh ngọc cực nhạt dịu mắt */
+    border-radius: 24px;
+    padding: 50px 60px;
+}
+
+.cta-text {
+    float: left;
+    width: 70%;
+}
+
+.cta-text h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--navy-text);
+    margin-bottom: 10px;
+}
+
+.cta-text p {
+    color: #4B5563;
+    font-size: 16px;
+    max-width: 600px;
+}
+
+.cta-action {
+    float: right;
+    width: 30%;
+    text-align: right;
+    padding-top: 15px;
+}
+
+.btn-dark-navy {
+    background-color: var(--navy-text);
+    color: var(--white);
+    padding: 15px 36px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-block;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.btn-dark-navy:hover {
+    opacity: 0.9;
+}
+
+/* --- FOOTER ĐA CỘT HOÀN CHỈNH --- */
+.footer {
+    background-color: var(--white);
+    border-top: 1px solid #E5E7EB;
+    padding: 80px 0 0 0;
+}
+
+.footer-grid {
+    padding-bottom: 60px;
+}
+
+.footer-col {
+    float: left;
+    width: 20%;
+    padding: 0 15px;
+}
+
+.footer-brand {
+    width: 40%;
+    padding-right: 50px;
+}
+
+.brand-desc {
+    font-size: 14px;
+    color: var(--muted-gray);
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.footer-socials a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #F3F4F6;
+    color: var(--navy-text);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin-right: 12px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.footer-socials a:hover {
+    background-color: var(--teal-main);
+    color: var(--white);
+}
+
+.footer-col h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-text);
+    margin-bottom: 25px;
+}
+
+.footer-col a {
+    display: block;
+    color: var(--muted-gray);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 14px;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: var(--teal-main);
+}
+
+/* Copyright Bar dưới cùng footer */
+.footer-bottom {
+    border-top: 1px solid #F3F4F6;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 13px;
+    color: #9CA3AF;
+}
+
+/* --- RESPONSIVE CHO PHẦN BỔ SUNG --- */
+@media (max-width: 991px) {
+    .test-quote-box, .avatar-cloud-container, .cta-text, .cta-action, .footer-col {
+        width: 100% !important;
+        float: none !important;
+        padding: 0 !important;
+        text-align: center !important;
+        margin-bottom: 40px;
+    }
+    .avatar-cloud-container {
+        height: 320px;
+    }
+    .cta-box {
+        padding: 40px 30px;
+    }
+    .cta-text p {
+        margin: 0 auto;
+    }
+}
