@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Menu Tương Tác</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .menu-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid #e74c3c;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .start-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+            transition: all 0.2s;
+        }
+        .start-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-1px);
+        }
+        .log-box {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #0f172a;
+            color: #38bdf8;
+            border-radius: 8px;
+            text-align: left;
+            font-family: 'Fira Code', Consolas, Monaco, monospace;
+            white-space: pre-line;
+            max-height: 300px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            border: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu-card">
+    <h2>Hệ Thống Menu Đa Chức Năng</h2>
+    <p>Ứng dụng thực hiện vòng lặp hiển thị Menu liên tục bằng hộp thoại nhập dữ liệu (Prompt) cho tới khi bạn chọn chức năng Thoát (Lựa chọn 10).</p>
+    
+    <button class="start-btn" onclick="kichHoatMenu()">Mở Hệ Thống Menu</button>
+    
+    <div class="log-box" id="system_log">Lịch sử thực thi hệ thống sẽ hiển thị tại đây...</div>
+</div>
+
+<script src="./Session11 baitap6.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .exercise-box {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .input-group {
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 12px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="exercise-box">
+        <h2>Bài 1: Kiểm tra a có chia hết cho b không</h2>
+        <div class="input-group">
+            <label>Nhập số a:</label>
+            <input type="number" id="b1_a">
+        </div>
+        <div class="input-group">
+            <label>Nhập số b:</label>
+            <input type="number" id="b1_b">
+        </div>
+        <button onclick="bai1()">Kiểm tra</button>
+        <div class="result" id="res_b1"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 2: Kiểm tra điều kiện vào lớp 10</h2>
+        <div class="input-group">
+            <label>Nhập tuổi học sinh:</label>
+            <input type="number" id="b2_tuoi">
+        </div>
+        <button onclick="bai2()">Kiểm tra tuổi</button>
+        <div class="result" id="res_b2"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 3: Kiểm tra số lớn hay nhỏ hơn 0</h2>
+        <div class="input-group">
+            <label>Nhập một số nguyên:</label>
+            <input type="number" id="b3_so">
+        </div>
+        <button onclick="bai3()">Kiểm tra</button>
+        <div class="result" id="res_b3"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 4: Tìm giá trị lớn nhất của 3 số</h2>
+        <div class="input-group">
+            <label>Số thứ nhất:</label>
+            <input type="number" id="b4_so1">
+        </div>
+        <div class="input-group">
+            <label>Số thứ hai:</label>
+            <input type="number" id="b4_so2">
+        </div>
+        <div class="input-group">
+            <label>Số thứ ba:</label>
+            <input type="number" id="b4_so3">
+        </div>
+        <button onclick="bai4()">Tìm Max</button>
+        <div class="result" id="res_b4"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 5: Xếp hạng học lực học sinh</h2>
+        <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: -5px;">
+            *Công thức áp dụng: Điểm TB = (Kiểm tra + Giữa kỳ * 2 + Cuối kỳ * 3) / 6
+        </p>
+        <div class="input-group">
+            <label>Điểm kiểm tra:</label>
+            <input type="number" id="b5_kt" min="0" max="10" step="0.1">
+        </div>
+        <div class="input-group">
+            <label>Điểm thi giữa kỳ:</label>
+            <input type="number" id="b5_gk" min="0" max="10" step="0.1">
+        </div>
+        <div class="input-group">
+            <label>Điểm thi cuối kỳ:</label>
+            <input type="number" id="b5_ck" min="0" max="10" step="0.1">
+        </div>
+        <button onclick="bai5()">Xếp hạng</button>
+        <div class="result" id="res_b5"></div>
+    </div>
+
+</div>
+
+<script src="./Session12 baitap1.js"></script>
+</body>
+</html>

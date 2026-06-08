@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập cấu trúc điều kiện</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .exercise-box {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #3498db;
+        }
+        .exercise-box h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+        }
+        .input-group {
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #27ae60;
+            border-left: 3px solid #27ae60;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Bài Tập Cấu Trúc Điều Kiện</h1>
+
+    <div class="exercise-box">
+        <h2>Bài 1: Chuyển từ độ C sang độ F</h2>
+        <div class="input-group">
+            <label>Nhập độ C (°C):</label>
+            <input type="number" id="b1_c" step="any">
+        </div>
+        <button onclick="bai1()">Chuyển đổi</button>
+        <div class="result" id="res_b1">Kết quả sẽ hiển thị tại đây</div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 2: Chuyển từ mét sang feet</h2>
+        <div class="input-group">
+            <label>Nhập số mét (m):</label>
+            <input type="number" id="b2_m" step="any">
+        </div>
+        <button onclick="bai2()">Chuyển đổi</button>
+        <div class="result" id="res_b2">Kết quả sẽ hiển thị tại đây</div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 3: Tính diện tích hình vuông</h2>
+        <div class="input-group">
+            <label>Nhập độ dài cạnh a:</label>
+            <input type="number" id="b3_a" step="any">
+        </div>
+        <button onclick="bai3()">Tính diện tích</button>
+        <div class="result" id="res_b3"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 4: Tính diện tích hình chữ nhật</h2>
+        <div class="input-group">
+            <label>Nhập cạnh a:</label>
+            <input type="number" id="b4_a" step="any">
+        </div>
+        <div class="input-group">
+            <label>Nhập cạnh b:</label>
+            <input type="number" id="b4_b" step="any">
+        </div>
+        <button onclick="bai4()">Tính diện tích</button>
+        <div class="result" id="res_b4"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 5: Tính diện tích tam giác vuông</h2>
+        <div class="input-group">
+            <label>Nhập cạnh kề a:</label>
+            <input type="number" id="b5_a" step="any">
+        </div>
+        <div class="input-group">
+            <label>Nhập cạnh kề b:</label>
+            <input type="number" id="b5_b" step="any">
+        </div>
+        <button onclick="bai5()">Tính diện tích</button>
+        <div class="result" id="res_b5"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 6: Giải phương trình bậc 1 (ax + b = 0)</h2>
+        <div class="input-group">
+            <label>Nhập hệ số a:</label>
+            <input type="number" id="b6_a" step="any">
+        </div>
+        <div class="input-group">
+            <label>Nhập hệ số b:</label>
+            <input type="number" id="b6_b" step="any">
+        </div>
+        <button onclick="bai6()">Giải phương trình</button>
+        <div class="result" id="res_b6"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 7: Giải phương trình bậc 2 (ax² + bx + c = 0)</h2>
+        <div class="input-group">
+            <label>Nhập hệ số a:</label>
+            <input type="number" id="b7_a" step="any">
+        </div>
+        <div class="input-group">
+            <label>Nhập hệ số b:</label>
+            <input type="number" id="b7_b" step="any">
+        </div>
+        <div class="input-group">
+            <label>Nhập hệ số c:</label>
+            <input type="number" id="b7_c" step="any">
+        </div>
+        <button onclick="bai7()">Giải phương trình</button>
+        <div class="result" id="res_b7"></div>
+    </div>
+
+    <div class="exercise-box">
+        <h2>Bài 8: Kiểm tra tuổi của một người</h2>
+        <div class="input-group">
+            <label>Nhập một số:</label>
+            <input type="number" id="b8_tuoi">
+        </div>
+        <button onclick="bai8()">Kiểm tra</button>
+        <div class="result" id="res_b8"></div>
+    </div>
+</div>
+
+<script src="./Session12 baitap2.js"></script>
+</body>
+</html>
