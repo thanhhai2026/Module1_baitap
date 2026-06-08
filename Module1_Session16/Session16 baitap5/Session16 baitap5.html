@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra chuỗi đối xứng (Palindrome)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid #ec4899;
+        }
+        h2 {
+            color: #1e293b;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        button {
+            background-color: #ec4899;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.2s;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+        }
+        button:hover {
+            background-color: #db2777;
+        }
+        .info-box {
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #475569;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Kiểm Tra Chuỗi Đối Xứng</h2>
+    <p>Chuỗi đối xứng (Palindrome) là chuỗi đọc xuôi hay đọc ngược đều cho kết quả giống nhau (Ví dụ: <i>radar, anna, 12321</i>).</p>
+    
+    <button onclick="chayChuongTrinh()">Bắt đầu kiểm tra</button>
+    
+    <div class="info-box">
+        * <strong>Yêu cầu đề bài:</strong><br>
+        - Nhập chuỗi bằng hàm <code>prompt()</code><br>
+        - Định nghĩa và xử lý logic bên trong hàm <code>isPalindrome()</code><br>
+        - Hiển thị thông báo kết quả bằng hàm <code>alert()</code>
+    </div>
+</div>
+
+<script src="./Session16 baitap5.js"></script>
+</body>
+</html>

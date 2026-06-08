@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh sách sách</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 30px 15px;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #111827;
+            margin-bottom: 25px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .full-width {
+                grid-column: span 2;
+            }
+        }
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: #0284c7;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        .input-group {
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px 12px;
+            box-sizing: border-box;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        input:focus {
+            outline: none;
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 5px;
+        }
+        .btn-add { background-color: #0284c7; color: white; }
+        .btn-add:hover { background-color: #0369a1; }
+        .btn-search { background-color: #0d9488; color: white; }
+        .btn-search:hover { background-color: #0f766e; }
+        .btn-delete { background-color: #dc2626; color: white; }
+        .btn-delete:hover { background-color: #b91c1c; }
+        .btn-exit { background-color: #4b5563; color: white; }
+        .btn-exit:hover { background-color: #374151; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background-color: #f9fafb;
+            color: #4b5563;
+            font-weight: 600;
+        }
+        tr:hover { background-color: #f3f4f6; }
+        .empty-message {
+            text-align: center;
+            color: #9ca3af;
+            padding: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hệ Thống Quản Lý Sách</h1>
+
+    <div class="grid">
+        <div class="card">
+            <h2 class="card-title">1. Thêm sách mới</h2>
+            <div class="input-group">
+                <label for="book_id">Mã sách (ID):</label>
+                <input type="text" id="book_id" placeholder="Ví dụ: B01">
+            </div>
+            <div class="input-group">
+                <label for="book_title">Tên sách:</label>
+                <input type="text" id="book_title" placeholder="Ví dụ: Đắc Nhân Tâm">
+            </div>
+            <div class="input-group">
+                <label for="book_author">Tác giả:</label>
+                <input type="text" id="book_author" placeholder="Ví dụ: Dale Carnegie">
+            </div>
+            <div class="input-group">
+                <label for="book_year">Năm xuất bản:</label>
+                <input type="number" id="book_year" placeholder="Ví dụ: 1936">
+            </div>
+            <button class="btn btn-add" onclick="themSachMoi()">Thêm sách</button>
+        </div>
+
+        <div class="grid" style="gap: 20px;">
+            <div class="card">
+                <h2 class="card-title" style="color: #0d9488;">3. Tìm kiếm sách theo tên</h2>
+                <div class="input-group">
+                    <label for="search_title">Nhập từ khóa tên sách:</label>
+                    <input type="text" id="search_title" placeholder="Tìm kiếm...">
+                </div>
+                <button class="btn btn-search" onclick="timKiemSachTheoTen()">Tìm kiếm</button>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title" style="color: #dc2626;">4. Xóa sách theo ID</h2>
+                <div class="input-group">
+                    <label for="delete_id">Nhập ID sách cần xóa:</label>
+                    <input type="text" id="delete_id" placeholder="Ví dụ: B01">
+                </div>
+                <button class="btn btn-delete" onclick="xoaSachTheoID()">Xóa sách</button>
+            </div>
+        </div>
+
+        <div class="card full-width">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-bottom: 15px;">
+                <h2 style="margin: 0; font-size: 1.15rem; color: #111827;">2. Danh sách sách trong kho</h2>
+                <button class="btn btn-exit" style="width: auto; margin: 0; padding: 6px 15px;" onclick="thoatChuongTrinh()">5. Thoát</button>
+            </div>
+            <div id="table_container">
+                </div>
+        </div>
+    </div>
+</div>
+
+<script src="./Session14 baitap6.js"></script>
+</body>
+</html>
