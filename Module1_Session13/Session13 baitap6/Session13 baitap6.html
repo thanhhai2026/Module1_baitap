@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số lần xuất hiện của k trong mảng</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            max-width: 650px;
+            width: 100%;
+            border-top: 5px solid #6366f1;
+        }
+        h2 {
+            color: #1e293b;
+            margin-top: 0;
+            font-size: 1.35rem;
+            text-align: center;
+        }
+        p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .array-box {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.05rem;
+            color: #334155;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            word-break: break-all;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-search {
+            background-color: #6366f1;
+            color: white;
+        }
+        .btn-search:hover {
+            background-color: #4f46e5;
+        }
+        .btn-refresh {
+            background-color: #64748b;
+            color: white;
+        }
+        .btn-refresh:hover {
+            background-color: #475569;
+        }
+        .result {
+            padding: 15px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            color: #16a34a;
+            font-weight: bold;
+            display: none;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Tìm Kiếm Và Đếm Số Lần Xuất Hiện</h2>
+    <p>Hệ thống tự động khai báo một mảng ngẫu nhiên (10 - 20 phần tử). Hãy nhập giá trị k để đếm số lần k xuất hiện.</p>
+    
+    <div class="array-box" id="array_container">
+        Đang khởi tạo mảng...
+    </div>
+
+    <div class="input-group">
+        <input type="number" id="input_k" placeholder="Nhập số nguyên k cần đếm...">
+        <button class="btn btn-search" onclick="demGiaTriK()">Đếm số lần</button>
+        <button class="btn btn-refresh" onclick="khoiTaoMang()">Đổi mảng mới</button>
+    </div>
+
+    <div class="result" id="result_container"></div>
+</div>
+
+<script src="./Session13 baitap6.js"></script>
+</body>
+</html>

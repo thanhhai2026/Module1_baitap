@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng chẵn lẻ trong mảng</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid #0ea5e9;
+        }
+        h2 {
+            color: #1e293b;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .btn-generate {
+            background-color: #0ea5e9;
+            color: white;
+        }
+        .btn-generate:hover {
+            background-color: #0284c7;
+        }
+        .btn-calc {
+            background-color: #10b981;
+            color: white;
+        }
+        .btn-calc:hover {
+            background-color: #059669;
+        }
+        .display-box {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            text-align: left;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            color: #334155;
+            min-height: 40px;
+            word-break: break-all;
+        }
+        .bold-text {
+            font-weight: bold;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Tính Tổng Số Lẻ Và Số Chẵn Trong Mảng</h2>
+    <p>Khai báo mảng số nguyên từ 10 đến 20 phần tử ngẫu nhiên, sử dụng vòng lặp và câu lệnh điều kiện để tính tổng.</p>
+    
+    <div class="btn-group">
+        <button class="btn-generate" onclick="taoMangNgauNhien()">1. Tạo mảng ngẫu nhiên</button>
+        <button class="btn-calc" onclick="tinhTongChanLe()">2. Tính tổng & Alert</button>
+    </div>
+    
+    <div class="display-box" id="array_display">
+        Mảng hiện tại: (Trống) - Hãy bấm nút "Tạo mảng ngẫu nhiên"
+    </div>
+    
+    <div class="display-box" id="result_display" style="margin-top: 10px; background-color: #f0fdf4; border: 1px solid #bbf7d0; display: none;">
+    </div>
+</div>
+
+<script src="./Session13 baitap5.js"></script>
+</body>
+</html>
