@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh sách sinh viên</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #000;
+        }
+
+        /* Form nhập liệu */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        button {
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #0069d9;
+        }
+
+        /* Ô tìm kiếm */
+        .search-container {
+            margin-bottom: 20px;
+        }
+        
+        .search-container input {
+            max-width: 250px;
+        }
+
+        /* Bảng hiển thị danh sách */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 10px;
+            font-size: 14px;
+        }
+
+        th {
+            font-weight: bold;
+            border-bottom: 2px solid #eee;
+        }
+
+        td {
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Các nút hành động */
+        .btn-action {
+            padding: 4px 10px;
+            color: white;
+            font-size: 12px;
+            margin-right: 5px;
+            font-weight: normal;
+        }
+
+        .btn-edit {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        .btn-edit:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+        }
+
+        .btn-delete:hover {
+            background-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Quản lý danh sách sinh viên</h2>
+
+        <div class="form-grid">
+            <input type="text" id="studentName" placeholder="Tên sinh viên">
+            <input type="number" id="studentAge" placeholder="Tuổi">
+            <input type="text" id="studentClass" placeholder="Lớp">
+            <button id="btnSubmit" class="btn-submit">Thêm sinh viên</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchName" placeholder="Tìm kiếm sinh viên...">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Tên</th>
+                    <th style="width: 15%;">Tuổi</th>
+                    <th style="width: 25%;">Lớp</th>
+                    <th style="width: 30%;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="./Session18 baitap5.js"></script>
+</body>
+</html>

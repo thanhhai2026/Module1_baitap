@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Todo-list</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .todo-container {
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        /* Khối tiêu đề màu đỏ phía trên */
+        .header-panel {
+            background-color: #f44336;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .header-panel h2 {
+            color: white;
+            margin: 0 0 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .input-group {
+            display: flex;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+        .input-group button {
+            padding: 12px 25px;
+            background-color: #d9d9d9;
+            color: #555;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .input-group button:hover {
+            background-color: #bbb;
+        }
+
+        /* Danh sách các công việc cần làm */
+        .todo-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .todo-item {
+            position: relative;
+            padding: 14px 40px 14px 50px;
+            font-size: 16px;
+            background: #f9f9f9;
+            transition: 0.2s;
+            cursor: pointer;
+            user-select: none;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Đổi màu xen kẽ giữa các hàng */
+        .todo-item:nth-child(odd) {
+            background: #f3f3f3;
+        }
+
+        .todo-item:hover {
+            background: #ebebeb;
+        }
+
+        /* Định dạng khi công việc đã hoàn thành (Đã check) */
+        .todo-item.checked {
+            background: #888888;
+            color: #fff;
+            text-decoration: line-through;
+        }
+
+        /* Thêm ký hiệu dấu tích V khi hoàn thành */
+        .todo-item.checked::before {
+            content: '';
+            position: absolute;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 2px 2px 0;
+            top: 15px;
+            left: 20px;
+            transform: rotate(45deg);
+            height: 15px;
+            width: 7px;
+        }
+
+        /* Nút xóa (X) nằm bên góc phải */
+        .delete-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 14px 20px;
+            color: #ff5252;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .delete-btn:hover {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .todo-item.checked .delete-btn {
+            color: #ddd;
+        }
+        .todo-item.checked .delete-btn:hover {
+            background-color: #b71c1c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="todo-container">
+        <div class="header-panel">
+            <h2>Danh sách những việc cần làm trong năm</h2>
+            <div class="input-group">
+                <input type="text" id="todoInput" placeholder="Title...">
+                <button id="addBtn">Thêm</button>
+            </div>
+        </div>
+
+        <ul id="todoList" class="todo-list">
+            </ul>
+    </div>
+
+    <script src="./Session18 baitap3.js"></script>
+</body>
+</html>
