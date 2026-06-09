@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Hình nền có tông màu tối tím huyền bí gần giống như ảnh mẫu */
+            background-color: #23192e;
+            background-image: radial-gradient(#3a2b4c 10%, transparent 11%), radial-gradient(#3a2b4c 10%, transparent 11%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Nút ADD BOOKMARK lớn ở trên cùng */
+        .btn-trigger-modal {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #b5a2cf;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 40px;
+            border: 2px solid #3a2b4c;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-trigger-modal:hover {
+            background-color: #8e44ad;
+            color: white;
+            border-color: #8e44ad;
+        }
+
+        /* Vùng chứa danh sách các thẻ Bookmark */
+        .bookmarks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Từng hộp khối Bookmark */
+        .bookmark-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid #3a2b4c;
+            border-radius: 6px;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .bookmark-card:hover {
+            transform: translateY(-3px);
+            background-color: rgba(142, 68, 173, 0.1);
+        }
+
+        /* Link bọc nội dung bên trong */
+        .bookmark-link {
+            color: #e0d4f7;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 85%;
+            word-break: break-all;
+        }
+
+        /* Favicon hoặc icon tượng trưng của website */
+        .bookmark-link img, .bookmark-link i {
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+            color: #9b59b6;
+        }
+
+        /* Nút xóa dấu X ở góc trên bên phải */
+        .btn-delete {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            color: #7f8c8d;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .btn-delete:hover {
+            color: #e74c3c;
+        }
+
+        /* MODAL LAYER (Nền mờ phủ toàn trang) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        /* Trạng thái mở Modal */
+        .modal-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Khung hộp thoại nhập thông tin ẩn/hiện */
+        .modal-box {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.show .modal-box {
+            transform: scale(1);
+        }
+
+        /* Tiêu đề Modal */
+        .modal-header {
+            background-color: #9b59b6;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .btn-close-modal {
+            color: white;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Nội dung form nhập bên trong Modal */
+        .modal-body {
+            padding: 25px 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #9b59b6;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #dcdde1;
+            border-radius: 4px;
+            font-size: 15px;
+            outline: none;
+            color: #333;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: #9b59b6;
+        }
+
+        /* Nút Save */
+        .btn-save {
+            background-color: #9b59b6;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-save:hover {
+            background-color: #8e44ad;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn-trigger-modal" id="btnOpenModal">Add Bookmark</button>
+
+    <div class="bookmarks-container" id="bookmarksContainer">
+        </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <span>Add Bookmark</span>
+                <button class="btn-close-modal" id="btnCloseModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="bookmarkForm">
+                    <div class="form-group">
+                        <label for="websiteName">Website Name</label>
+                        <input type="text" id="websiteName" class="form-control" placeholder="Ví dụ: Google" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="websiteUrl">Website URL</label>
+                        <input type="text" id="websiteUrl" class="form-control" placeholder="Ví dụ: https://google.com" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn-save">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Session19 baitap5.js"></script>
+</body>
+</html>

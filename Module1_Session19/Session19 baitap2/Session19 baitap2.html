@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Khung chứa ứng dụng bảng quản lý */
+        .task-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Thanh form nhập liệu đầu việc mới */
+        .task-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .form-control {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-content { flex: 2; min-width: 180px; }
+        .input-date { flex: 1; min-width: 130px; }
+        .select-status { flex: 1; min-width: 130px; background-color: #fff; }
+        .input-user { flex: 1; min-width: 130px; }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover { background-color: #0056b3; }
+
+        /* Thiết kế cấu trúc Bảng dữ liệu */
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .task-table th, .task-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .task-table th {
+            background-color: #fff;
+            color: #495057;
+            font-weight: bold;
+        }
+
+        .task-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Các nút hành động Sửa / Xóa */
+        .btn-action {
+            padding: 4px 8px;
+            font-size: 12px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 4px;
+            color: #333;
+        }
+
+        .btn-action:hover {
+            background-color: #e2e2e2;
+        }
+
+        /* Định dạng cột số thứ tự và nút */
+        .text-center { text-center: center; width: 40px; }
+        .column-action { width: 110px; }
+    </style>
+</head>
+<body>
+
+    <div class="task-container">
+        <h2>Task Management</h2>
+        
+        <form class="task-form" id="taskForm">
+            <input type="hidden" id="taskId">
+            
+            <input type="text" id="taskContent" class="form-control input-content" placeholder="Content">
+            <input type="date" id="taskDueDate" class="form-control input-date">
+            <select id="taskStatus" class="form-control select-status">
+                <option value="" disabled selected>Choose status</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <input type="text" id="taskAssignedTo" class="form-control input-user" placeholder="Username">
+            <button type="submit" class="btn-submit" id="btnSubmit">Submit</button>
+        </form>
+
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th>Content</th>
+                    <th>Due date</th>
+                    <th>Status</th>
+                    <th>Assigned to</th>
+                    <th class="column-action">Action</th>
+                </tr>
+            </thead>
+            <tbody id="taskTableBody">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="./Session19 baitap2.js"></script>
+</body>
+</html>
